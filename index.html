@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Todo List</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+        
+        <div class="add-todo">
+            <input type="text" id="todo-input" placeholder="What needs to be done?">
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="date" id="due-date">
+            <button onclick="addTodo()">Add</button>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterTodos('all')">All</button>
+            <button class="filter-btn" onclick="filterTodos('active')">Active</button>
+            <button class="filter-btn" onclick="filterTodos('completed')">Completed</button>
+            <input type="text" id="search" placeholder="Search todos...">
+        </div>
+        
+        <div class="stats">
+            <span>Total: <strong id="total">0</strong></span>
+            <span>Active: <strong id="active">0</strong></span>
+            <span>Completed: <strong id="completed">0</strong></span>
+        </div>
+        
+        <ul id="todo-list" class="todo-list"></ul>
+        
+        <div class="actions">
+            <button onclick="clearCompleted()">Clear Completed</button>
+            <button onclick="clearAll()">Clear All</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
